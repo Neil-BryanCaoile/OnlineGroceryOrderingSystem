@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Christmas Market</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/cart-styles.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="container">
+      <nav class="main-nav">
+        <ul class="main-nav-list flex">
+          <li>
+            <a th:href="@{/}" class="main-nav-link">
+              <img class="icons" src="/img/icons/sweets.png" alt="home" />
+            </a>
+          </li>
+          <li>
+            <ul class="flex">
+              <li>
+                <a th:href="@{/user}">
+                  <img
+                    class="icons"
+                    src="/img/icons/santa-claus.png"
+                    alt="profile-link"
+                  />
+                </a>
+              </li>
+              <li>
+                <a th:href="@{/cart}">
+                  <img class="icons" src="/img/icons/trolley.png" alt="cart" />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <h1 class="center heading-1">Christmas Candy Market</h1>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="recipt">
+          <h1
+            class="total-amount container"
+            th:text="'TotalAmount: ' + ${totalAmount} + '$'"
+          >
+            TotalAmount: 20$
+          </h1>
+          <h1
+            sec:authorize="isAuthenticated()"
+            class="total-amount container discount"
+            th:text="'Discount(10%): -' + ${discount} + '$'"
+          >
+            Discount: -10$
+          </h1>
+          <h1
+            sec:authorize="isAuthenticated()"
+            class="total-amount container"
+            th:text="'Total Amount(Discounted): ' + ${totalAmountDiscount} + '$'"
+          >
+            Your total amount: 20$
+          </h1>
+        </div>
+        <h2 class="heading-2">Your Items</h2>
+        <ul class="cart-item-list">
+          <li class="items flex" th:each="i: ${cartItemLists}">
+            <div class="item-details">
+              <div class="heading-3" th:text="${i.getItemName}">Name</div>
+              <div class="heading-3" th:text="${i.getItemPrice} + '$'">
+                Price
+              </div>
+            </div>
+            <div class="image-container">
+              <img
+                src="/img/items/GingerBreadCinamon.jpg"
+                th:src="${i.getItemSrcImg}"
+                alt=""
+              />
+            </div>
+            <div class="button">
+              <a
+                th:href="@{/cart/deleteCartItem/}+ ${i.itemId}"
+                class="btn"
+                href=""
+                >X</a
+              >
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-container"><a  th:href="@{/orderSuccess}" class="btn" href="">Purchase</a></div>
+    </main>
+  </body>
+</html>

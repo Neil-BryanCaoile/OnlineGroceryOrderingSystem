@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/login-styles.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+  
+	
+    <main>
+      <div class="container grid grid-column-2 grid-align-items-center gap-1">
+        <div class="login-contianer">
+          <h1 class="heading-1">Login Page</h1>
+          <!-- Error -->
+
+          <div
+            class="error-container"
+            th:if="${param.error} OR ${param.logout}"
+          >
+            <div class="error" th:if="${param.error}">
+              <div class="alert">Invalid username or password!</div>
+            </div>
+            <div class="error" th:if="${param.logout}">
+              <div class="alert">You have been logged out.</div>
+            </div>
+          </div>
+          <!-- Error -->
+
+          <form
+            class="form-login flex flex-column"
+            th:action="@{/login}"
+            method="post"
+          >
+            <!-- Inputs -->
+            <div>
+              <label class="label" for="username">Username</label>
+              <input
+                class="input-text w-100"
+                type="text"
+                id="username"
+                name="username"
+                autofocus="autofocus"
+                placeholder="Username"
+              />
+            </div>
+            <div>
+              <label class="label" for="password">Password</label>
+              <input
+                class="input-text w-100"
+                type="password"
+                id="password"
+                name="password"
+                autofocus="autofocus"
+                placeholder="Password"
+              />
+            </div>
+            <!-- Inputs -->
+            <!-- Submit Button -->
+            <div>
+              <input
+                class="btn w-100"
+                type="submit"
+                name="login-submit"
+                id="login-submit"
+                value="Log In"
+              />
+            </div>
+            <div>
+              <a th:href="@{/register}" class="register heading-3">Register</a>
+            </div>
+            <!-- Submit Button -->
+          </form>
+        </div>
+
+        <div class="image-container">
+          <img
+            src="https://images.unsplash.com/photo-1543589077-47d81606c1bf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=687&q=80"
+            alt=""
+          />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

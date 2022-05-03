@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Christmas Market</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/main-index-styles.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="container">
+      <nav class="main-nav">
+        <ul class="main-nav-list flex">
+          <li>
+            <a th:href="@{/}" class="main-nav-link">
+              <img class="icons" src="./img/icons/sweets.png" alt="home" />
+            </a>
+          </li>
+          <li>
+            <ul class="mini-nav flex">
+              <li>
+                <a th:href="@{/user}">
+                  <img
+                    class="icons"
+                    src="./img/icons/santa-claus.png"
+                    alt="profile-link"
+                  />
+                </a>
+              </li>
+              <li class="cart-1">
+                <span th:text="${session.totalCartList}" class="num-cartItems"
+                  >0</span
+                >
+                <a th:href="@{/cart}">
+                  <img class="icons" src="./img/icons/trolley.png" alt="cart" />
+                </a>
+              </li>
+              <li sec:authorize="isAuthenticated()">
+                <a th:href="@{/admin}">
+                  <img
+                    class="icons"
+                    src="./img/icons/database.png"
+                    alt="database"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <h1 class="center heading-1">Christmas Candy Market</h1>
+      <nav class="food-nav">
+        <ul class="flex">
+          <li><a href="" th:href="@{/}">Home</a></li>
+          <li><a href="" th:href="@{/sweets}">Sweets</a></li>
+          <li><a href="" th:href="@{/vegetables}">Vegetables</a></li>
+          <li><a href="" th:href="@{/meats}">Meat</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="center container">
+      <h1 class="heading-1">Access Denied!</h1>
+      <h1 class="heading-3">You are not allowed here!</h1>
+    </div>
+  </body>
+</html>

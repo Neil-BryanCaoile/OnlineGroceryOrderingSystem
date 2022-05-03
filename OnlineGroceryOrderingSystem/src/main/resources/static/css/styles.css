@@ -1,0 +1,201 @@
+@charset "ISO-8859-1";
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: 52.6%;
+  color: #45100f;
+}
+
+.container {
+  width: 136.6rem;
+  margin: auto;
+  padding: 0 1.6rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-1 {
+  gap: 9.6rem;
+}
+
+.grid-align-items-center {
+  align-items: center;
+}
+
+.grid-column-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.image-container > img {
+  width: 100%;
+  height: 35rem;
+  object-fit: fill;
+}
+
+.heading-1 {
+  font-size: 9rem;
+  font-family: "Mountains of Christmas", cursive;
+}
+.heading-2 {
+  font-size: 5rem;
+  font-family: "Mountains of Christmas", cursive;
+}
+.heading-3 {
+  font-size: 3rem;
+  font-family: "Mountains of Christmas", cursive;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.btn {
+  border: none;
+  padding: 1.6rem 3.2rem;
+  font-size: 2rem;
+
+  background-color: #ac2825;
+  color: #f7eae9;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Mountains of Christmas", cursive;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #9b2421;
+}
+
+.input-text {
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  color: inherit;
+  background-color: #f7eae9;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  border: none;
+  font-family: "Mountains of Christmas", cursive;
+}
+
+.label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+.flex-between-jc {
+  justify-content: space-between;
+}
+
+.icons {
+  width: 5rem;
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+.main-nav-list {
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+h1.heading-1 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.invisible {
+  display: none;
+}
+
+.mini-nav {
+  gap: 2rem;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #45100f;
+  transition: all 0.3s;
+}
+
+a:hover,
+a:active {
+  color: #c72421;
+}
+.food-nav > ul {
+  justify-content: space-around;
+  font-size: 3rem;
+}
+.food-nav {
+  margin: 5rem 0 6rem;
+}
+
+.num-cartItems {
+  font-size: 4.5rem;
+  display: block;
+  margin-right: 1rem;
+}
+.cart-1 {
+  display: flex;
+}
+
+.register {
+  margin-left: 42rem;
+}
+
+div#main-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5rem;
+}
+
+.item-container {
+  outline: 1px #ac2825 solid;
+}
+.item-details-cotnainer {
+  background-color: #b43e3b;
+  margin: auto;
+  padding: 1rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+.item-price {
+  transform: rotate(30deg);
+  background-color: yellow;
+  position: absolute;
+  font-size: 1;
+  right: -49px;
+  font-size: 3rem;
+  padding: 0 8rem;
+  color: #220807;
+}
+/* 
+#ac2825 
+
+*/

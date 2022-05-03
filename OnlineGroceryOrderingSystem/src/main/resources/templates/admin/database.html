@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <title>Database</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/main-index-styles.css" />
+    <link rel="stylesheet" href="/css/database-styles.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="container">
+      <nav class="main-nav">
+        <ul class="main-nav-list flex">
+          <li>
+            <a th:href="@{/}" class="main-nav-link">
+              <img class="icons" src="/img/icons/sweets.png" alt="home" />
+            </a>
+          </li>
+          <li>
+            <ul class="mini-nav flex">
+              <li>
+                <a th:href="@{/user}">
+                  <img
+                    class="icons"
+                    src="/img/icons/santa-claus.png"
+                    alt="profile-link"
+                  />
+                </a>
+              </li>
+              <li class="cart-1">
+                <span class="num-cartItems">0</span>
+                <a th:href="@{/cart}">
+                  <img class="icons" src="/img/icons/trolley.png" alt="cart" />
+                </a>
+              </li>
+              <li >
+                <a th:href="@{/admin}">
+                  <img
+                    class="icons"
+                    src="/img/icons/database.png"
+                    alt="database"
+                  />
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <h1 class="center heading-1">Christmas Candy Market</h1>
+    </header>
+    <div >
+      <div class="database container">
+        <h1 class="heading-2">Item List</h1>
+        <table>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Type</th>
+          </tr>
+          <tr th:each="i: ${itemsLists}">
+            <td th:text="${i.itemId}">1</td>
+            <td th:text="${i.getItemName}">Sample</td>
+            <td th:text="${i.getItemPrice} + '$'"></td>
+            <td th:text="${i.getItemType}">Sweet</td>
+            <td><a th:href="@{/admin/deleteItem/}+ ${i.itemId}" href="">Delete</a></td>
+            <td><a th:href="@{/admin/editItem/}+ ${i.itemId}" href="">Edit</a></td>
+          </tr>
+        </table>
+        
+        
+        <form action="" th:action=@{/insertItem} method="post" th:object="${item}">
+	        <!-- ID -->
+	        <section>
+	          <input type="hidden" name="itemId" th:field="*{itemId}">
+	        </section>
+	        
+	        <!-- Type -->
+	        <section>
+	          <label for="">Name:</label>
+	          <input type="text" name="itemName" th:field="*{itemName}" id="itemName">
+	        </section>
+	        
+	        <!-- Price -->
+	        <section>
+	          <label for="">Price:</label>
+	          <input type="number" name="itemPrice" th:field="*{itemPrice}" id="itemPrice">
+	        </section>
+	        
+	        <!-- urlLink -->
+	        <section>
+	          <label for="">Item image address:</label>
+	          <input type="text" name="itemSrcImg" th:field="*{itemSrcImg}" id="itemSrcImg">
+	        </section>
+	        
+	        <!-- Type -->
+	        <section>
+	            <select th:field="*{itemType}">
+	              <option th:each="il:${itemTypes}" th:value="${il.itemType}" th:text="${il.itemType}"/>
+	            </select>
+         	</section>
+	
+	        <!-- SUBMIT -->
+	        <section>
+	          <input type="submit" value="Insert!">
+	        </section>
+        </form>
+        
+      </div>
+    </div>
+  </body>
+</html>

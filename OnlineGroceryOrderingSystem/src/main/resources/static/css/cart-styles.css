@@ -1,0 +1,80 @@
+.image-container {
+  width: 15rem;
+  height: 15rem;
+}
+.cart-item-list {
+  width: 50%;
+  margin: auto;
+}
+.cart-item-list li {
+  justify-content: space-between;
+  position: relative;
+}
+.item-details {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.cart-item-list li {
+  justify-content: space-between;
+  padding: 1.6rem;
+}
+.cart-item-list li:nth-of-type(even) {
+  background-color: #dea9a8;
+}
+.cart-item-list li:nth-of-type(odd) {
+  border: solid #dea9a8 1px;
+}
+
+.heading-2 {
+  margin-left: 29rem;
+}
+.total-amount {
+  margin: auto;
+  text-align: center;
+  padding-top: 1.6rem;
+  font-size: 3.4rem;
+  text-shadow: 2px 7px 5px rgba(0, 0, 0, 0.3),
+    0px -4px 10px rgba(255, 255, 255, 0.3);
+  margin-bottom: 1.6rem;
+}
+
+.discount {
+  color: #81b622;
+}
+
+img {
+  width: 100%;
+  height: 100% !important;
+}
+.button {
+  align-self: center;
+  position: absolute;
+  left: 67rem;
+}
+.button a {
+  color: #ece7e7;
+}
+.recipt {
+  background-color: #ece7e7;
+  padding: 3.2rem;
+  width: 60%;
+  margin: auto;
+  border: solid #ac2825 2px;
+  margin-bottom: 3.2rem;
+}
+.recipt h1 {
+  width: 100%;
+}
+.btn-container {
+  margin-top: 3.2rem;
+}
+.btn-container a {
+  color: white;
+}
+.btn {
+  display: block;
+  width: fit-content;
+  margin: auto;
+}

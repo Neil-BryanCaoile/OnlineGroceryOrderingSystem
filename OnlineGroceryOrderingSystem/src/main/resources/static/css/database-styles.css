@@ -1,0 +1,29 @@
+@charset "ISO-8859-1";
+th,
+td {
+  padding: 1.5rem;
+  border: solid #45100f 0.3px;
+}
+
+th {
+  background-color: #c72421;
+}
+table {
+  font-size: 3.2rem;
+  border-collapse: collapse;
+}
+.database {
+  width: fit-content;
+  margin: auto;
+}
+
+.heading-2 {
+  margin-bottom: 1.6rem;
+}
+tr:nth-of-type(odd) {
+  background-color: #f9e9e9;
+}
+tr:nth-of-type(even) {
+  background-color: #f4d3d3;
+}
+

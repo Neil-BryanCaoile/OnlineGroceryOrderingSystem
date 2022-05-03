@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+.login-contianer {
+  font-size: 2rem;
+}
+
+.login-contianer h1,
+.login-contianer .error {
+  text-align: center;
+}
+
+.form-login {
+  gap: 2.4rem;
+}
+
+.error-container {
+  padding: 3.2rem;
+  background-color: #dea9a8;
+  color: #ac2825;
+  margin: 3.2rem;
+}
+
+main {
+  padding-top: 5.2rem;
+}
+img{
+	height:100% !important;
+}

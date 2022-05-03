@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+div#main-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5rem;
+}
+
+.item-container {
+  outline: 1px #ac2825 solid;
+}
+.item-details-cotnainer {
+  background-color: #b43e3b;
+  margin: auto;
+  padding: 1rem 1.6rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.item-price {
+  transform: rotate(30deg);
+  background-color: yellow;
+  position: absolute;
+  font-size: 1;
+  right: -49px;
+  font-size: 3rem;
+  padding: 0 8rem;
+  color: #220807;
+}
